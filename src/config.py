@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 @dataclass
 class TrainConfig:
-    image_size: int = 200
+    image_size: int = 128
     channels: int = 3
     batch_size: int = 16
     num_epochs: int = 100
