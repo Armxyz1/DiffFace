@@ -4,10 +4,10 @@ from dataclasses import dataclass
 class TrainConfig:
     image_size: int = 200
     channels: int = 3
-    batch_size: int = 32
+    batch_size: int = 16
     num_epochs: int = 100
     lr: float = 1e-4
-    save_every: int = 5
+    save_every: int = 1
     ema_decay: float = 0.995
     num_timesteps: int = 1000
     results_dir: str = "./results"
