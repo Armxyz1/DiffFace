@@ -4,6 +4,7 @@ from torch.utils.data import DataLoader, random_split
 from torch.optim import Adam
 from accelerate import Accelerator
 from tqdm import tqdm
+from torchvision.utils import save_image
 
 from dataset import FaceDataset
 from model import create_model
@@ -89,6 +90,11 @@ def train():
         # Save latest checkpoint
         if accelerator.is_main_process:
             save_checkpoint(accelerator.unwrap_model(model), optimizer, epoch+1, latest_ckpt)
+
+            # Save sample image
+            sampled = model.sample(batch_size=16)
+            save_path = os.path.join(cfg.results_dir, f"sample_epoch_{epoch+1:03d}.png")
+            save_image(sampled, save_path, nrow=4, normalize=True, value_range=(-1, 1))
 
 if __name__ == "__main__":
     train()
