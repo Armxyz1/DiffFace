@@ -6,7 +6,7 @@ class TrainConfig:
     channels: int = 3
     batch_size: int = 16
     num_epochs: int = 500
-    lr: float = 1e-5
+    lr: float = 1e-4
     save_every: int = 1
     ema_decay: float = 0.995
     num_timesteps: int = 1000
