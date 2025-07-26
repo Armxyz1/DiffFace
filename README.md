@@ -7,6 +7,11 @@ To install the required dependencies, run the following command:
 pip install -r requirements.txt
 ```
 
+To get the training data, run the following command:
+```bash
+bash dataset.sh
+```
+
 ## Usage
 To train the model, use the following command:
 ```bash
