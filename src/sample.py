@@ -16,6 +16,7 @@ def sample():
         raise FileNotFoundError("No checkpoint found to load model.")
 
     model.eval()
+    os.makedirs(cfg.results_dir, exist_ok=True)
     with torch.no_grad():
         sampled = model.sample(batch_size=16)
         sampled = (sampled + 1) * 0.5

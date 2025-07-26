@@ -1,1 +1,1 @@
-gdown 1mMLSMmS0RDzDR_cTLxpvU4Vw94OYubOr --output checkpoints/best.pt
+gdown 1CwiMr5co0wDa73oT9FcxnTvgJArbuGgz --output checkpoints/best.pt
