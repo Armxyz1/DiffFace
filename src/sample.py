@@ -17,8 +17,10 @@ def sample():
 
     model.eval()
     with torch.no_grad():
-        sampled_images = model.sample(batch_size=9)
-        save_image(sampled_images, os.path.join(cfg.results_dir, "sample.png"), nrow=3, normalize=True, value_range=(-1, 1))
+        sampled = model.sample(batch_size=16)
+        sampled = (sampled + 1) * 0.5
+        sampled = sampled.clamp(0, 1)
+        save_image(sampled, os.path.join(cfg.results_dir, "sample.png"), nrow=4)
 
 if __name__ == "__main__":
     sample()
