@@ -16,5 +16,5 @@ class TrainConfig:
     use_mixed_precision: bool = True
     seed: int = 42
     validation_split: float = 0.1
-    early_stopping_patience: int = 10
+    early_stopping_patience: int = 3
     min_delta: float = 1e-4

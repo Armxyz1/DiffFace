@@ -91,10 +91,5 @@ def train():
         if accelerator.is_main_process:
             save_checkpoint(accelerator.unwrap_model(model), optimizer, epoch+1, latest_ckpt)
 
-            # Save sample image
-            sampled = model.sample(batch_size=16)
-            save_path = os.path.join(cfg.results_dir, f"sample_epoch_{epoch+1:03d}.png")
-            save_image(sampled, save_path, nrow=4, normalize=True, value_range=(-1, 1))
-
 if __name__ == "__main__":
     train()
